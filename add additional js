@@ -1,0 +1,33 @@
+// --- Uses functions from main.js ---
+// Example: use greetUser() from main.js
+
+greetUser("Team");
+
+// Define tasks and process them
+const taskList = ["clean", "upload", "skip", "notify", "archive"];
+
+// Function with removable verbose flag and break logic
+function processTasks(tasks, verbose = true) {
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    
+    if (verbose) {
+      console.log(`Processing task #${i + 1}: ${task}`);
+    }
+
+    if (task === "skip") {
+      console.log("Skipping this task...");
+      // break; // to be removed later
+    }
+
+    // Reuse log from main.js function
+    console.log(`Is task length even? ${isEven(task.length)}`);
+    console.log(`Task "${task}" completed.`);
+  }
+}
+
+// Execute
+processTasks(taskList, true);
+
+// Call farewell function from main.js
+farewellUser("Team");
